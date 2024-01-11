@@ -12,6 +12,7 @@
 
 # Uncomment a feed source
 sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+svn export https://github.com/haiibo/openwrt-packages/trunk/luci-app-bypass package/luci-app-bypass
 #删除feeds自带mosdns、v2ray-geodata
 rm -rf ./feeds/packages/net/mosdns
 rm -rf feeds/packages/net/v2ray-geodata
@@ -32,7 +33,7 @@ mkdir package/small
 pushd package/small
 
 #克隆源码
-svn export https://github.com/haiibo/openwrt-packages/trunk/luci-app-bypass /luci-app-bypass
+
 #passwall2
 git clone -b main --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git
 git clone -b main --depth 1 https://github.com/xiaorouji/openwrt-passwall.git
